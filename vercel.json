@@ -6,9 +6,6 @@
         "use": "@vercel/static-build",
         "config": {}
       }
-    ],
-    "scripts": {
-      "install": "npm install",
-      "build": "npm run build"
-    }
+    ]
+    
   }
