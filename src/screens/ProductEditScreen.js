@@ -107,7 +107,7 @@ function ProductEditScreen({ match, history }) {
       };
 
       const { data } = await axios.post(
-        "https://otakuhouse.vercel.app/api/products/upload/",
+        "/api/products/upload/",
         formData,
         config
       );
