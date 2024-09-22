@@ -51,7 +51,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/users/login/",
+      "https://otakuhouse.vercel.app/api/users/login/",
       { username: email, password: password },
       config
     );
@@ -112,7 +112,7 @@ export const register = (name, email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/users/register/",
+      "https://otakuhouse.vercel.app/api/users/register/",
       { name: name, email: email, password: password },
       config
     );
@@ -155,7 +155,7 @@ export const googleLogin = (accessToken) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      '/api/users/google-login/',
+      'https://otakuhouse.vercel.app/api/users/google-login/',
       { tokenId: accessToken }, // Use tokenId here
       config
     );
@@ -200,7 +200,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     };
 
     // USING ${id} BECAUSE WHILE ACCESSING NORMAL USER WE'LL PASS STRING 'profile' BUT WHILE ACCESSING ADMIN PANEL WE'LL PASS THE 'id' SO LINK HAS TO BE DYNAMIC
-    const { data } = await axios.get(`/api/users/${id}/`, config);
+    const { data } = await axios.get(`https://otakuhouse.vercel.app/api/users/${id}/`, config);
 
     /* IF GET REQUEST SUCCESSFULL WE DISPATCH & SEND THE PAYLOAD TO OUR REDUCER */
     dispatch({
@@ -239,7 +239,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     };
 
     // USING ${id} BECAUSE WHILE ACCESSING NORMAL USER WE'LL PASS STRING 'profile' BUT WHILE ACCESSING ADMIN PANEL WE'LL PASS THE 'id' SO LINK HAS TO BE DYNAMIC
-    const { data } = await axios.put(`/api/users/profile/update`, user, config);
+    const { data } = await axios.put(`https://otakuhouse.vercel.app/api/users/profile/update`, user, config);
 
     /* IF PUT REQUEST SUCCESSFULL WE DISPATCH & SEND THE PAYLOAD TO OUR REDUCER */
     dispatch({
@@ -286,7 +286,7 @@ export const listUsers = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/users/`, config);
+    const { data } = await axios.get(`https://otakuhouse.vercel.app/api/users/`, config);
 
     dispatch({
       type: USER_LIST_SUCCESS,
@@ -323,7 +323,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.delete(`/api/users/delete/${id}`, config);
+    const { data } = await axios.delete(`https://otakuhouse.vercel.app/api/users/delete/${id}`, config);
 
     dispatch({
       type: USER_DELETE_SUCCESS,
@@ -361,7 +361,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `/api/users/update/${user._id}/`,
+      `https://otakuhouse.vercel.app/api/users/update/${user._id}/`,
       user,
       config
     );
@@ -398,7 +398,7 @@ export const passwordReset = (email) => async (dispatch) => {
     console.log("hi")
 
     const { data } = await axios.post(
-      'http://127.0.0.1:8000/api/users/passwordreset/',
+      'https://otakuhouse.vercel.app/api/users/passwordreset/',
       { email },
       config
     );
@@ -424,7 +424,7 @@ export const resetPassword = async (uidb64, token, newPassword) => {
   console.log('uidb64:', uidb64);
   console.log('token:', token);
   try {
-    const response = await axios.post(`/api/passwordreset/${uidb64}/${token}/`, {
+    const response = await axios.post(`https://otakuhouse.vercel.app/api/passwordreset/${uidb64}/${token}/`, {
       new_password: newPassword
     });
     console.log('Password reset successful');
