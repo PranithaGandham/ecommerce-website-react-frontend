@@ -31,7 +31,7 @@ import {
 
 function OrderScreen({ history, match }) {
   const { orderId } = useParams(); // Get the orderId from the URL params
-
+  console.log(orderId)
   const dispatch = useDispatch();
 
   const [sdkReady, setSdkReady] = useState(false);
