@@ -43,9 +43,11 @@ export const createOrder = (order) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}` /* PASSING IN USER TOKEN AND IF THE USER IN AUTHORISED HE'LL HAVE FULL ACCESS TO HIS PROFILE INFORMATION */,
       },
     };
+    console.log("Hi")
 
     /* MAKING API CALL TO SAVE THE ORDER DETAILS */
     const { data } = await axios.post(`https://otakuhouse.vercel.app/api/orders/add/`, order, config);
+    console.log("Made it")
 
     /* IF PUT REQUEST SUCCESSFULL WE DISPATCH & SEND THE PAYLOAD TO OUR REDUCER */
     dispatch({
