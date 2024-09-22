@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+
 /* REACT ROUTER */
 import { Link } from "react-router-dom";
 
@@ -30,8 +30,8 @@ import {
 } from "../constants/orderConstants";
 
 function OrderScreen({ history, match }) {
-  const { orderId } = useParams(); // Get the orderId from the URL params
-  console.log(orderId)
+  const orderId = match.params.id;
+
   const dispatch = useDispatch();
 
   const [sdkReady, setSdkReady] = useState(false);
