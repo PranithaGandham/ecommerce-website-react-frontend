@@ -1,7 +1,7 @@
-import React, { useState, useEffect  } from "react";
-
+import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 /* REACT ROUTER */
-import { Link ,useParams, useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /* REACT BOOTSTRAP */
 import { Row, Col, ListGroup, Image, Card, Button } from "react-bootstrap";
@@ -31,7 +31,6 @@ import {
 
 function OrderScreen({ history, match }) {
   const { orderId } = useParams(); // Get the orderId from the URL params
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
