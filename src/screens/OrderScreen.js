@@ -1,13 +1,4 @@
 import React, { useState, useEffect } from "react";
-
-/* REACT ROUTER */
-import { Link } from "react-router-dom";
-
-/* REACT BOOTSTRAP */
-import { Row, Col, ListGroup, Image, Card, Button } from "react-bootstrap";
-
-/* PAYPAL BUTTONS */
-import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Row, Col, ListGroup, Image, Card, Button } from "react-bootstrap";
 import { PayPalButton } from "react-paypal-button-v2";
